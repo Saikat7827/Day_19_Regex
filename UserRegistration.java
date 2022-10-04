@@ -8,7 +8,7 @@ public class UserRegistration {
 
 	static Scanner scanner = new Scanner(System.in);
 
-	
+
 	public static void validFirstName() {
 
 		System.out.println("Enter First Name:");
@@ -26,10 +26,27 @@ public class UserRegistration {
 
 	}
 
+	
+	public static void validLastName() {
 
-	public static void validEmail() {
+		System.out.println("Enter Last Name:");
+		String lname = scanner.next();
+		String regex = "^[A-Z]{1}[a-z]{2,}$";
+
+		Pattern p = Pattern.compile(regex);
+		Matcher m = p.matcher(lname);
+		boolean r = m.matches();
+
+		if (r)
+			System.out.println("It Is A Last Name");
+		else
+			System.out.println("It Is Invalid Last name");
+
+	}
+
+
+	public static void validLastName1() {
 		// TODO Auto-generated method stub
 		
 	}
-
 }
