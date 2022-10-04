@@ -25,7 +25,6 @@ public class UserRegistration {
 
 	}
 
-	
 	public static void validLastName() {
 
 		System.out.println("Enter Last Name:");
@@ -75,7 +74,7 @@ public class UserRegistration {
 			System.out.println("Phone Number is Invalid");
 	}
 
-	
+
 	public static void validPassRule1() {
 		System.out.print("Enter The Password Atleast Eight Character : ");
 		String passWord = scanner.nextLine();
@@ -84,6 +83,20 @@ public class UserRegistration {
 		Matcher m4 = p4.matcher(passWord);
 		boolean r4 = m4.matches();
 		if (r4)
+			System.out.println("Password is Valid");
+		else
+			System.out.println("Password is Invalid");
+	}
+
+	
+	public static void validPassRule2() {
+		System.out.print("Enter the Password Atleast One Upper Case & Eight Character :");
+		String passWord1 = scanner.nextLine();
+		String regex5 = "^[A-Z]{1}+[a-zA-z0-9]{7,}$";
+		Pattern p5 = Pattern.compile(regex5);
+		Matcher m5 = p5.matcher(passWord1);
+		boolean r5 = m5.matches();
+		if (r5)
 			System.out.println("Password is Valid");
 		else
 			System.out.println("Password is Invalid");
